@@ -1,0 +1,39 @@
+2016-12-13 15:42:51,484 - user_api.py - DEBUG - 生成ssh key， 并设置authorized_keys
+2016-12-19 22:05:54,083 - user_api.py - DEBUG - 生成ssh key， 并设置authorized_keys
+2016-12-19 22:10:38,185 - user_api.py - DEBUG - 生成ssh key， 并设置authorized_keys
+2016-12-19 23:05:21,698 - user_api.py - DEBUG - 生成ssh key， 并设置authorized_keys
+2016-12-19 23:06:38,059 - user_api.py - DEBUG - 生成ssh key， 并设置authorized_keys
+2016-12-20 09:41:18,689 - user_api.py - DEBUG - 生成ssh key， 并设置authorized_keys
+2016-12-20 10:27:22,622 - user_api.py - DEBUG - 生成ssh key， 并设置authorized_keys
+2017-01-04 11:01:03,192 - user_api.py - DEBUG - 生成ssh key， 并设置authorized_keys
+2017-01-05 14:59:48,841 - views.py - DEBUG - 添加sudo SUDO: /bin/find
+2017-01-05 15:26:27,489 - views.py - DEBUG - 添加sudo SUDO: 53423
+2017-01-05 15:26:41,251 - views.py - DEBUG - 添加sudo SUDO: asdf
+2017-01-05 15:26:50,851 - views.py - DEBUG - 添加sudo SUDO: rqawef
+2017-01-05 15:39:50,190 - views.py - DEBUG - 添加sudo SUDO: 53423
+2017-01-05 15:40:28,138 - user_api.py - DEBUG - 生成ssh key， 并设置authorized_keys
+2017-01-05 15:41:32,111 - views.py - DEBUG - 添加sudo SUDO: 53423
+2017-01-05 22:37:56,322 - views.py - DEBUG - 添加sudo SUDO: 53423
+2017-01-05 22:38:53,849 - views.py - DEBUG - 添加sudo SDF: ef
+2017-01-05 23:11:38,875 - views.py - DEBUG - generate role key: /home/kingleft/workspace/jumpserver/keys/role_key/key-3f5c24a942fb4d0bab55d8e7557e4973
+2017-01-05 23:42:08,665 - user_api.py - DEBUG - 生成ssh key， 并设置authorized_keys
+2017-01-05 23:46:04,099 - perm_api.py - DEBUG - 生成res: [{'username': u'admin', 'ip': u'test', 'password': '123456', 'hostname': u'test', 'port': 22}]
+2017-01-05 23:46:04,110 - views.py - DEBUG - 推送role结果: {}
+2017-01-05 23:46:04,110 - views.py - DEBUG - {}
+2017-01-05 23:49:40,309 - views.py - DEBUG - generate role key: /home/kingleft/workspace/jumpserver/keys/role_key/key-c8d5134bacf4416399e23bd4e81a5120
+2017-01-06 13:14:04,327 - views.py - DEBUG - generate role key: /home/kingleft/workspace/jumpserver/keys/role_key/key-1d1e254368c5412e8f0e428a8eeccf69
+2017-01-06 13:14:20,402 - perm_api.py - DEBUG - 生成res: [{'username': u'root', 'ip': u'192.168.171.136', 'password': 'redhat', 'hostname': u'\u672c\u7eaa', 'port': 22}]
+2017-01-06 13:14:23,143 - ansible_api.py - DEBUG - {'dark': {}, 'contacted': {u'\u672c\u7eaa': {u'comment': u'', u'createhome': True, u'group': 1009, u'uid': 1009, u'changed': True, u'system': False, u'state': u'present', u'shell': u'/bin/bash', 'invocation': {'module_name': 'user', 'module_complex_args': {}, 'module_args': u'name=travelsky shell=/bin/bash'}, u'home': u'/home/travelsky', u'name': u'travelsky'}}}
+2017-01-06 13:14:24,955 - ansible_api.py - DEBUG - {'dark': {}, 'contacted': {u'\u672c\u7eaa': {u'exclusive': False, u'changed': True, u'key_options': None, u'state': u'present', u'user': u'travelsky', u'key': u'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDfUoyAxAkUIwFhuiXRAtAiDk4Z0o0kOu5VWieIsX5SfxsxFeBEu6c4JgSvskvhkoCZBOrA/1KsVK6k0jtU3FBvzk5+13H4bMJOlCc0UcoWMl23it9/OZEW7Zf/v86r8+ltQMJGe9m5BI++f/kI5Vken6q/BK1RvN+D1XmvcVGRKDK8tq97i6IutizK+GXtqjpHV2EpzV727r2LkfidcVofKor8QDF/PGQCF4ANxg41t4d07P3sdk63KNA3IgDGQG0U2FZ+99NRqEoYrnsVChRGm/FB6mEVGAFqSsnt+C5KSLolp/ctNDM+x62cfD13k2lN4xrAThWDysEZaCLwy39T jumpserver@localhost.localdomain', 'invocation': {'module_name': 'authorized_key', 'module_complex_args': {}, 'module_args': u'user="travelsky" key="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDfUoyAxAkUIwFhuiXRAtAiDk4Z0o0kOu5VWieIsX5SfxsxFeBEu6c4JgSvskvhkoCZBOrA/1KsVK6k0jtU3FBvzk5+13H4bMJOlCc0UcoWMl23it9/OZEW7Zf/v86r8+ltQMJGe9m5BI++f/kI5Vken6q/BK1RvN+D1XmvcVGRKDK8tq97i6IutizK+GXtqjpHV2EpzV727r2LkfidcVofKor8QDF/PGQCF4ANxg41t4d07P3sdk63KNA3IgDGQG0U2FZ+99NRqEoYrnsVChRGm/FB6mEVGAFqSsnt+C5KSLolp/ctNDM+x62cfD13k2lN4xrAThWDysEZaCLwy39T jumpserver@localhost.localdomain" state=present'}, u'path': None, u'unique': False, u'keyfile': u'/home/travelsky/.ssh/authorized_keys', u'manage_dir': True}}}
+2017-01-06 13:14:26,377 - ansible_api.py - DEBUG - {'dark': {}, 'contacted': {u'\u672c\u7eaa': {u'cmd': [u'sed', u'-i', u's/^travelsky.*//', u'/etc/sudoers'], u'end': u'2017-01-06 13:14:26.300167', u'stdout': u'', u'changed': True, u'start': u'2017-01-06 13:14:26.280092', u'delta': u'0:00:00.020075', u'stderr': u'', u'rc': 0, 'invocation': {'module_name': 'command', 'module_complex_args': {}, 'module_args': u"sed -i 's/^travelsky.*//' /etc/sudoers"}, u'warnings': [u'Consider using template or lineinfile module rather than running sed']}}}
+2017-01-06 13:14:26,377 - views.py - DEBUG - 推送role结果: {u'sudo': {'failed': {}, 'ok': {u'\u672c\u7eaa': u''}}, u'key_push': {'failed': {}, 'ok': {u'\u672c\u7eaa': True}}, u'pass_push': {'failed': {}, 'ok': {u'\u672c\u7eaa': True}}}
+2017-01-06 13:14:26,377 - views.py - DEBUG - {u'sudo': {'failed': {}, 'ok': {u'\u672c\u7eaa': u''}}, u'key_push': {'failed': {}, 'ok': {u'\u672c\u7eaa': True}}, u'pass_push': {'failed': {}, 'ok': {u'\u672c\u7eaa': True}}}
+2017-01-06 13:14:59,543 - views.py - DEBUG - 获取授权系统用户: travelsky
+2017-01-06 13:15:17,955 - views.py - DEBUG - 获取授权系统用户: travelsky
+2017-01-06 13:16:03,825 - views.py - DEBUG - 获取授权系统用户: travelsky
+2017-01-06 13:25:02,957 - views.py - DEBUG - 获取授权系统用户: 
+2017-01-06 13:25:57,379 - views.py - DEBUG - 获取授权系统用户: travelsky
+2017-01-06 13:27:15,428 - user_api.py - DEBUG - 生成ssh key， 并设置authorized_keys
+2017-01-06 13:33:26,098 - views.py - DEBUG - 获取授权系统用户: travelsky
+2017-01-06 13:33:54,008 - views.py - DEBUG - 获取授权系统用户: travelsky
+2017-01-06 13:42:04,701 - views.py - DEBUG - 获取授权系统用户: travelsky
