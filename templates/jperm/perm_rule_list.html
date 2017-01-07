@@ -52,9 +52,7 @@
                             <tr>
                                 <th class="text-center">规则名称 </th>
                                 <th class="text-center">用户</th>
-                                <th class="text-center">用户组</th>
                                 <th class="text-center">资产</th>
-                                <th class="text-center">资产组</th>
                                 <th class="text-center">系统用户</th>
                                 <th class="text-center">操作</th>
                             </tr>
@@ -67,13 +65,7 @@
                                     {{ rule | rule_member_count:"user" }}
                                 </td>
                                 <td class="text-center">
-                                    {{ rule | rule_member_count:"user_group" }}
-                                </td>
-                                <td class="text-center">
                                     {{ rule | rule_member_count:"asset" }}
-                                </td>
-                                <td class="text-center">
-                                    {{ rule | rule_member_count:"asset_group" }}
                                 </td>
                                 <td class="text-center">
                                     {{ rule | rule_member_count:"role" }}
