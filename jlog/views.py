@@ -27,13 +27,13 @@ def log_list(request, offset):
     user_perm = request.session['role_id']
     login_user = get_object(User, username=username)
     asset_find = Asset.objects.filter(productLine=login_user.productLine)
-    users_find = User.objects.all().filter(productLine=login_user.productLine)
+    users_find = User.objects.filter(productLine=login_user.productLine)
     host_names = []
     user_names = []
     for host in asset_find:
         host_names.append(host.hostname)
     for user in users_find:
-        user_names.append(user.name)
+        user_names.append(user.username)
 
     if offset == 'online':
         keyword = request.GET.get('keyword', '')

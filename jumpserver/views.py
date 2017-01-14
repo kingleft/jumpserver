@@ -147,6 +147,69 @@ def index(request):
         login_10 = Log.objects.order_by('-start_time')[:10]
         login_more_10 = Log.objects.order_by('-start_time')[10:21]
 
+    elif is_role_request(request, 'groupadmin'):
+        # dashboard 显示汇总
+        username = request.user.username
+        login_user = get_object(User, username=username)
+        users = User.objects.all().filter(productLine=login_user.productLine)
+        hosts = Asset.objects.all().filter(productLine=login_user.productLine)
+        host_names = []
+        user_names = []
+        for host in hosts:
+            host_names.append(host.hostname)
+        for user in users:
+            user_names.append(user.name)
+        online = Log.objects.filter(is_finished=0, host__in=host_names, user__in=user_names)
+        online_host = online.values('host').distinct()
+        online_user = online.values('user').distinct()
+        active_users = User.objects.filter(is_active=1, username__in=user_names)
+        active_hosts = Asset.objects.filter(is_active=1, hostname__in=host_names)
+
+        # 一个月历史汇总
+        date_li, date_str = getDaysByNum(30)
+        date_month = repr(date_str)
+        active_user_per_month = str(get_count_by_day(date_li, 'user'))
+        active_asset_per_month = str(get_count_by_day(date_li, 'asset'))
+        active_login_per_month = str(get_count_by_day(date_li, 'login'))
+
+        # 活跃用户资产图
+        active_user_month = get_count_by_date(date_li, 'user')
+        disabled_user_count = len(users.filter(is_active=False))
+        inactive_user_month = len(users) - active_user_month
+        active_asset_month = get_count_by_date(date_li, 'asset')
+        disabled_asset_count = len(hosts.filter(is_active=False)) if hosts.filter(is_active=False) else 0
+        inactive_asset_month = len(hosts) - active_asset_month if len(hosts) > active_asset_month else 0
+
+        # 一周top10用户和主机
+        week_data = Log.objects.filter(start_time__range=[from_week, datetime.datetime.now()], host__in=host_names, user__in=user_names)
+        user_top_ten = week_data.values('user').annotate(times=Count('user')).order_by('-times')[:10]
+        host_top_ten = week_data.values('host').annotate(times=Count('host')).order_by('-times')[:10]
+
+        for user_info in user_top_ten:
+            username = user_info.get('user')
+            last = Log.objects.filter(user=username).latest('start_time')
+            user_info['last'] = last
+
+        for host_info in host_top_ten:
+            host = host_info.get('host')
+            last = Log.objects.filter(host=host).latest('start_time')
+            host_info['last'] = last
+
+        # 一周top5
+        week_users = week_data.values('user').distinct().count()
+        week_hosts = week_data.count()
+
+        user_top_five = week_data.values('user').annotate(times=Count('user')).order_by('-times')[:5]
+        color = ['label-success', 'label-info', 'label-primary', 'label-default', 'label-warnning']
+
+        # 最后10次权限申请
+        # perm apply latest 10
+        # perm_apply_10 = Apply.objects.order_by('-date_add')[:10]
+
+        # 最后10次登陆
+        login_10 = Log.objects.filter(host__in=host_names, user__in=user_names).order_by('-start_time')[:10]
+        login_more_10 = Log.objects.filter(host__in=host_names, user__in=user_names).order_by('-start_time')[10:21]
+
     return render_to_response('index.html', locals(), context_instance=RequestContext(request))
 
 

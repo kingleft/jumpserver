@@ -290,7 +290,7 @@ def is_role_request(request, role='user'):
     require this request of user is right
     要求请求角色正确
     """
-    role_all = {'user': 'CU', 'admin': 'GA', 'super': 'SU'}
+    role_all = {'user': 'CU', 'admin': 'GA', 'super': 'SU', 'groupadmin': 'GU'}
     if request.user.role == role_all.get(role, 'CU'):
         return True
     else:

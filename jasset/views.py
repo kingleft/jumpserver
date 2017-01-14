@@ -21,6 +21,7 @@ def group_add(request):
 
     if request.method == 'POST':
         name = request.POST.get('name', '')
+        productLine = request.POST.get('productLine', '')
         asset_select = request.POST.getlist('asset_select', [])
         comment = request.POST.get('comment', '')
 
@@ -29,7 +30,7 @@ def group_add(request):
                 emg = u'组名不能为空'
                 raise ServerError(emg)
 
-            asset_group_test = get_object(AssetGroup, name=name)
+            asset_group_test = get_object(AssetGroup, name=name, productLine=productLine)
             if asset_group_test:
                 emg = u"该组名 %s 已存在" % name
                 raise ServerError(emg)
@@ -146,7 +147,7 @@ def asset_add(request):
         is_active = True if request.POST.get('is_active') == '1' else False
         use_default_auth = request.POST.get('use_default_auth', '')
         try:
-            if Asset.objects.filter(hostname=unicode(hostname)):
+            if Asset.objects.filter(hostname=unicode(hostname), productLine=productLine):
                 error = u'该主机名 %s 已存在!' % hostname
                 raise ServerError(error)
             if len(hostname) > 54:
