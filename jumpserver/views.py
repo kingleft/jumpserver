@@ -279,6 +279,9 @@ def Logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
+def gahelp(request):
+    return render_to_response('gahelp.html')
+
 
 @require_role('admin')
 def setting(request):
